@@ -7,6 +7,7 @@ This project demonstrates a data pipeline for a  platform where order events are
 - **Data Transformation**: Validation, aggregation, and cleanup.
 - **Caching**: Redis as the caching layer for user and global statistics.
 - **REST API**: Exposing endpoints for quick retrieval of stats using FastAPI.
+- **Gen AI**: Gen AI integration to perform data quality checks.
 
 ---
 
@@ -92,7 +93,6 @@ This project demonstrates a data pipeline for a  platform where order events are
    - Horizontal scaling using multiple workers with k8s.
    - Employ Redis clustering for distributed caching.
    - Utilizing Kafka for parallel processing.
-   - Gen AI integration to perform data quality checks.
    
 
 ---
