@@ -42,14 +42,17 @@ This project demonstrates a data pipeline for an  platform where order events ar
    ```
 
 3. Populate the SQS queue with sample data:
+
+**NOTE**: In this populate_sqs.py ensure that the source  excel data file(testing data) relative path should be present if not add in that script.
+
    ```bash
    python scripts/populate_sqs.py
    ```
 
-4. Verify worker processing:
+5. Verify worker processing:
    - Confirm worker logs for successful ingestion and Redis updates.
 
-5. Test API Endpoints:
+6. Test API Endpoints:
    - **User stats**: 
      ```bash
      curl http://localhost:8000/users/U5678/stats
