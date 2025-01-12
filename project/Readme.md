@@ -31,7 +31,7 @@ This project demonstrates a data pipeline for a  platform where order events are
 ### **Steps to Set Up the Project**
 1. Clone the repository:
    ```bash
-   git clone <repository-link>
+   git clone https://github.com/Aftabbs/SQS-py-pipeline-DE-Assignment.git
    cd <repository-folder>
    ```
 
