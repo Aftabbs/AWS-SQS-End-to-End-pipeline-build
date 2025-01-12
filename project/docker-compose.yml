@@ -1,0 +1,49 @@
+
+services:
+  localstack:
+    image: localstack/localstack
+    container_name: localstack
+    ports:
+      - "4566:4566" # Localstack endpoint
+      - "4576:4576" # SQS
+    environment:
+      - SERVICES=sqs
+      - DEBUG=1
+      - AWS_DEFAULT_REGION=us-east-1
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  consumer:
+    build:
+     context: .  
+     dockerfile: consumer/Dockerfile 
+    container_name: consumer
+    depends_on:
+      - redis
+      - localstack
+    environment:
+      - AWS_ENDPOINT=http://localstack:4566
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+
+  api:
+    build:
+      context: .  
+      dockerfile: api/Dockerfile  
+    container_name: api
+    depends_on:
+      - redis
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
