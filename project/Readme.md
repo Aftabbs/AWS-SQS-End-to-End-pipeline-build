@@ -71,7 +71,7 @@ This project demonstrates a data pipeline for an  platform where order events ar
 - **`project/`**:
   - `api/main.py`: FastAPI application.
   - `consumer/consumer.py`: SQS consumer.
-- **`enhancement/enhanced_queries.py`**:
+- **`enhancement/enhancement.py`**:
   - Optional enhancements: Top N users, date range filters.
 - **`docker-compose.yml`**: Service orchestration.
 
