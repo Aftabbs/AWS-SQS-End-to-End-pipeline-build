@@ -6,7 +6,7 @@ from transformers import TrainingArguments
 from unsloth import is_bfloat16_supported
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter 
 import os  
 from dot_env import load_dot_env
 load_dot_env()
