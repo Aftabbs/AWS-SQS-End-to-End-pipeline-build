@@ -5,7 +5,7 @@ REDIS_HOST = "redis"
 REDIS_PORT = 6379
 redis_client = get_redis_connection(REDIS_HOST, REDIS_PORT)
 
-app = FastAPI()
+app = FastAPI() 
 
 @app.get("/stats/global")
 def get_global_stats():
