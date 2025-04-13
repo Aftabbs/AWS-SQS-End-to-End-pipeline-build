@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from shared.utils import get_redis_connection
 
-REDIS_HOST = "redis"
+REDIS_HOST = "redis" 
 REDIS_PORT = 6379
 redis_client = get_redis_connection(REDIS_HOST, REDIS_PORT)
 
